@@ -36,6 +36,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.WhenEntityFrameworkMeetU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12.WhenEntityFrameworkMeetUnity-SeeTransaction", "12.WhenEntityFrameworkMeetUnity-SeeTransaction\12.WhenEntityFrameworkMeetUnity-SeeTransaction.csproj", "{1BC1ACE5-985B-43F5-9A0C-18A48904BECC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.WhenEntityFrameworkMeetUnity-FailedTransaction", "13.WhenEntityFrameworkMeetUnity-FailedTransaction\13.WhenEntityFrameworkMeetUnity-FailedTransaction.csproj", "{E42809E2-E2FD-411B-BEB0-550411B380E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.WhenEntityFrameworkMeetUnity-TestTransaction", "14.WhenEntityFrameworkMeetUnity-TestTransaction\14.WhenEntityFrameworkMeetUnity-TestTransaction.csproj", "{E46F9261-74A3-481F-A738-A8C8A3B89FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15.WhenEntityFrameworkMeetUnity-TestTransactionComplete", "15.WhenEntityFrameworkMeetUnity-TestTransactionComplete\15.WhenEntityFrameworkMeetUnity-TestTransactionComplete.csproj", "{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -186,6 +192,36 @@ Global
 		{1BC1ACE5-985B-43F5-9A0C-18A48904BECC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1BC1ACE5-985B-43F5-9A0C-18A48904BECC}.Release|x86.ActiveCfg = Release|x86
 		{1BC1ACE5-985B-43F5-9A0C-18A48904BECC}.Release|x86.Build.0 = Release|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Debug|x86.ActiveCfg = Debug|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Debug|x86.Build.0 = Debug|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Release|Any CPU.ActiveCfg = Release|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Release|x86.ActiveCfg = Release|x86
+		{E42809E2-E2FD-411B-BEB0-550411B380E3}.Release|x86.Build.0 = Release|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Debug|x86.ActiveCfg = Debug|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Debug|x86.Build.0 = Debug|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Release|Any CPU.ActiveCfg = Release|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Release|x86.ActiveCfg = Release|x86
+		{E46F9261-74A3-481F-A738-A8C8A3B89FE8}.Release|x86.Build.0 = Release|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Debug|x86.ActiveCfg = Debug|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Debug|x86.Build.0 = Debug|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Release|Any CPU.ActiveCfg = Release|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Release|Mixed Platforms.Build.0 = Release|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Release|x86.ActiveCfg = Release|x86
+		{E450A242-DEA8-4FA1-92BD-B35FD8A4BB8C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
