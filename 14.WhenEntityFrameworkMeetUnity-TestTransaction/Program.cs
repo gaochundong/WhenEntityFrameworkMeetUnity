@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Transactions;
 using AutoMapper;
 using WhenEntityFrameworkMeetUnity.DataAccess;
@@ -31,14 +33,55 @@ namespace WhenEntityFrameworkMeetUnity
         Phone = "16666666666",
       };
 
+      //Task t = Task.Factory.StartNew(() =>
+      //{
+      //  int i = 0;
+      //  while (i < 100)
+      //  {
+      //    List<DomainModels.Customer> customers = new List<DomainModels.Customer>();
+
+      //    using (var transactionScope = new TransactionScope(
+      //      TransactionScopeOption.RequiresNew,
+      //      new TransactionOptions()
+      //      {
+      //        IsolationLevel = IsolationLevel.ReadUncommitted
+      //      }))
+      //    {
+      //      try
+      //      {
+      //        using (RetailEntities context = new RetailEntities())
+      //        {
+      //          List<Customer> entities = context.Customers.AsQueryable().ToList();
+
+      //          foreach (var entity in entities)
+      //          {
+      //            DomainModels.Customer customer = Mapper.Map<Customer, DomainModels.Customer>(entity);
+      //            customers.Add(customer);
+      //          }
+      //        }
+      //      }
+      //      catch (Exception ex)
+      //      {
+      //        Console.WriteLine(FlattenException(ex));
+      //      }
+      //      transactionScope.Complete();
+      //    }
+
+      //    Console.WriteLine("-----> " + i + " times");
+      //    foreach (var customer in customers)
+      //    {
+      //      Console.WriteLine(customer);
+      //    }
+
+      //    i++;
+      //    Thread.Sleep(1000);
+      //  }
+      //});
+
       try
       {
         using (var transactionScope = new TransactionScope(
-          TransactionScopeOption.RequiresNew,
-          new TransactionOptions()
-          {
-            IsolationLevel = IsolationLevel.ReadUncommitted
-          }))
+          TransactionScopeOption.RequiresNew))
         {
           Customer entity1 = Mapper.Map<DomainModels.Customer, Customer>(customer1);
           Customer entity2 = Mapper.Map<DomainModels.Customer, Customer>(customer2);
@@ -46,8 +89,9 @@ namespace WhenEntityFrameworkMeetUnity
           using (RetailEntities context = new RetailEntities())
           {
             context.Customers.Add(entity1);
+            context.SaveChanges(); // 顺利提交
             context.Customers.Add(entity2);
-            context.SaveChanges();
+            context.SaveChanges(); // 提交时将抛出异常
 
             customer1.Id = entity1.Id;
             customer2.Id = entity2.Id;
@@ -66,7 +110,7 @@ namespace WhenEntityFrameworkMeetUnity
       Console.WriteLine("=====================================");
 
       // =============== 查询回滚结果 ===============
-      List<DomainModels.Customer> customers = new List<DomainModels.Customer>();
+      List<DomainModels.Customer> getCustomers = new List<DomainModels.Customer>();
 
       using (var transactionScope = new TransactionScope(
         TransactionScopeOption.RequiresNew,
@@ -84,7 +128,7 @@ namespace WhenEntityFrameworkMeetUnity
             foreach (var entity in entities)
             {
               DomainModels.Customer customer = Mapper.Map<Customer, DomainModels.Customer>(entity);
-              customers.Add(customer);
+              getCustomers.Add(customer);
             }
           }
         }
@@ -96,7 +140,7 @@ namespace WhenEntityFrameworkMeetUnity
         transactionScope.Complete();
       }
 
-      foreach (var customer in customers)
+      foreach (var customer in getCustomers)
       {
         Console.WriteLine(customer);
       }
