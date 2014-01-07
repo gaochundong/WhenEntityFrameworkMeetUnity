@@ -7,7 +7,7 @@ namespace WhenEntityFrameworkMeetUnity
     static RetailEntities()
     {
       Database.SetInitializer<RetailEntities>(
-        new DropCreateDatabaseAlways<RetailEntities>());
+        new CreateDatabaseIfNotExists<RetailEntities>());
     }
 
     public RetailEntities()

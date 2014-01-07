@@ -57,12 +57,6 @@ namespace WhenEntityFrameworkMeetUnity.BulkExtensions
         {
           sqlBulkCopy.BatchSize = batchSize;
           sqlBulkCopy.DestinationTableName = dataTable.TableName;
-
-          foreach (DataColumn dataColumn in dataTable.Columns)
-          {
-            sqlBulkCopy.ColumnMappings.Add(dataColumn.ColumnName, dataColumn.ColumnName);
-          }
-
           sqlBulkCopy.WriteToServer(dataTable);
         }
       }

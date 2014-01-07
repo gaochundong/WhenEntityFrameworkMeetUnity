@@ -14,7 +14,7 @@ namespace WhenEntityFrameworkMeetUnity
       // =============== 构造数据 ===============
       Console.ForegroundColor = ConsoleColor.Green;
 
-      int customerCount = 100000;
+      int customerCount = 10000;
 
       List<Customer> customers = new List<Customer>();
       for (int i = 0; i < customerCount; i++)
